@@ -1,0 +1,81 @@
+import urllib2
+>>> import nltk
+>>> nltk.download()
+# use the line below to down load a webpage
+html = urllib2.urlopen('www.berkshire').read()
+
+soup = BeautifulSoup(open(doc.html))
+soup.prettify() => read html
+soup.get_text() => all text
+soup.get_text(‘|’, strip=True) => all text as unicode, separate tags with |, remove line breaks
+ #use the line below to down load a webpage
+
+
+Search
+.find()
+('tag', {'attr' : 'value'})
+.find_all()
+string
+string, string
+attr = ‘’text”
+attrs={"data-foo": "value"}
+
+## serching for tabs
+import re
+for tag in soup.find_all(re.compile("t")):
+  print(tag.name)
+
+def has_class_but_no_id(tag):
+  return tag.has_attr('class') and not tag.has_attr('id’)
+
+soup.find_all(has_class_but_no_id)
+
+
+
+>>> from nltk.corpus import brown
+>>> brown.words()
+[u'The', u'Fulton', u'County', u'Grand', u'Jury', ...]
+>>> from nltk.collocations import *
+>>> bigram_measures = nltk.collocations.BigramAssocMeasures()
+>>> dir(bigram_measures)
+
+
+
+
+>>> trigram_measures = nltk.collocations.TrigramAssocMeasures()
+>>> finder = BigramCollocationFinder.from_words(nltk.corpus.genesis.words('english-web.txt'))
+>>> finder
+<nltk.collocations.BigramCollocationFinder object at 0x10b1b0e50>
+>>> finder.nbest(bigram_measures.pmi, 10) 
+[(u'Allon', u'Bacuth')....
+
+
+
+
+
+>>> nltk.corpus.genesis.words('english-web.txt')
+[u'In', u'the', u'beginning', u'God', u'created', ...]
+>>> len(nltk.corpus.genesis.words('english-web.txt'))
+44054
+>>> nltk.corpus.genesis.words('english-web.txt')[1:100]
+
+
+
+
+
+
+>>> from nltk.book import *
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+
